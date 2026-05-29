@@ -28,7 +28,7 @@ The framework is evaluated on three benchmark datasets:
 ### Download Instructions
 
 - **LETOR4.0**: Available at https://www.microsoft.com/en-us/research/project/letor-learning-rank-information-retrieval/
-- **WCL2R**: Available from the Journal of Information and Data Management (requires registration)
+- **WCL2R**: Available from the Journal of Information and Data Management [1].
 
 ## Installation
 
@@ -135,6 +135,9 @@ perl Eval-Score-4.0-WCL2R.pl judgements.txt predictions.txt output.txt 0
 - **Static graphs**: Requires retraining for dynamic document collections
 - **Top-rank focus**: Optimized for precision at top positions, may sacrifice recall
 - **Distributional shifts**: Vulnerable to changes between training and deployment environments
+
+## References
+[1] Alcântara ODA, Jr. ARP, Almeida HM, et al (2010) WCL2R: A Benchmark Collection for Learning to Rank Research with Clickthrough Data. Journal of Information and Data Management 1:551–551. https://doi.org/10.5753/JIDM.2010.1294
 
 ## Citation
 
