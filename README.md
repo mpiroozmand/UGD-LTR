@@ -24,21 +24,6 @@ The framework models ranking data as a weighted bipartite graph, extracts 22 str
 | MQ2007 | P@1 | +1.8% over HLambdaMART |
 | MQ2008 | P@1 | +3.2% over RankSVM-Struct |
 
-## Repository Structure
-
-```
-UGD-LTR/
-├── UGD_LTR_WCL2R.ipynb          # Main Jupyter notebook implementation
-├── requirements.txt              # Python dependencies
-├── data/                         # Place datasets here
-│   ├── FS.txt                    # WCL2R dataset (required)
-│   └── LETOR4.0/                 # MQ2007/MQ2008 datasets
-├── evaluation/
-│   └── Eval-Score-4.0-WCL2R.pl   # Evaluation script
-├── models/                       # Saved models
-├── results/                      # Output predictions and metrics
-└── README.md
-```
 
 ## Datasets
 
