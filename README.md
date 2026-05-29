@@ -144,7 +144,7 @@ perl Eval-Score-4.0-WCL2R.pl judgements.txt predictions.txt output.txt 0
 If you use this code or find our work useful, please cite:
 
 ```bibtex
-@article{piroozmand2025ugdltr,
+@article{piroozmand@2026,
   title={UGD-LTR: An Uncertainty-Aware Graph-Based Deep Learning Framework for Learning to Rank},
   author={Piroozmand, Maryam and Moeini, Ali and Mazoochi, Mojtaba and Keyhanipour, Amir Hosein},
   journal={Applied Intelligence},
