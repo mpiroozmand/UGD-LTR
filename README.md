@@ -86,27 +86,6 @@ The main notebook `UGD_LTR_WCL2R.ipynb` is designed for Google Colab:
 4. Place evaluation script in `/content/drive/MyDrive/Eval-Score-4.0-WCL2R.pl`
 5. Run cells sequentially
 
-### Local Execution
-
-```python
-# Load dataset
-df = processFile('path/to/FS.txt')
-
-# Split train/test (70/20/10 for WCL2R)
-df_train, df_test = train_test_split2(df, test_size=0.29, random_state=42)
-
-# Extract graph-based features
-df_train_with_features = create_bipartite_graph_with_all_features(df_train)
-
-# Predict graph features for test set
-df_test_with_features, models, scalers = predict_centrality_features(
-    df_train_with_features, df_test, top_k_features_array
-)
-
-# Train base rankers and fuse via Choquet integral
-# (See notebook for complete pipeline)
-```
-
 ## Algorithm Pipeline
 
 ### Step 1: Graph-Based Feature Extraction
