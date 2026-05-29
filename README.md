@@ -148,7 +148,7 @@ If you use this code or find our work useful, please cite:
   title={UGD-LTR: An Uncertainty-Aware Graph-Based Deep Learning Framework for Learning to Rank},
   author={Piroozmand, Maryam and Moeini, Ali and Mazoochi, Mojtaba and Keyhanipour, Amir Hosein},
   journal={Applied Intelligence},
-  year={2025}
+  year={2026}
 }
 ```
 
