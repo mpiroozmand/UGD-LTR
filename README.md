@@ -19,11 +19,11 @@ The framework models ranking data as a weighted bipartite graph, extracts 22 str
 
 The framework is evaluated on three benchmark datasets:
 
-| Dataset | Queries | Documents | Features | Data Type |
-|---------|---------|-----------|----------|-----------|
-| MQ2007 (LETOR4.0) | 1,692 | 65,323 | 46 | Web search (GOV2) |
-| MQ2008 (LETOR4.0) | 784 | 14,384 | 46 | Web search (GOV2) |
-| WCL2R | 277,095 | 3.1M | 29 | Clickthrough + IR features |
+| Dataset | Queries | Documents | Features | 
+|---------|---------|-----------|----------|
+| MQ2007 (LETOR4.0) | 1,692 | 65,323 | 46 |
+| MQ2008 (LETOR4.0) | 784 | 14,384 | 46 |
+| WCL2R | 277,095 | 3.1M | 29 |
 
 ### Download Instructions
 
