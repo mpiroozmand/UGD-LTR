@@ -15,16 +15,6 @@ The framework models ranking data as a weighted bipartite graph, extracts 22 str
 - **Uncertainty-Aware Fusion**: Combines multiple rankers using Choquet fuzzy integrals to handle prediction disagreement
 - **Competitive Performance**: Outperforms state-of-the-art methods including HLambdaMART, RankSVM-Struct, and SeaRank
 
-## Performance Highlights
-
-| Dataset | Metric | Improvement vs. Best Baseline |
-|---------|--------|-------------------------------|
-| WCL2R | NDCG@1 | +5.6% over SeaRank |
-| WCL2R | P@1 | +11.7% over SeaRank |
-| MQ2007 | P@1 | +1.8% over HLambdaMART |
-| MQ2008 | P@1 | +3.2% over RankSVM-Struct |
-
-
 ## Datasets
 
 The framework is evaluated on three benchmark datasets:
@@ -148,20 +138,6 @@ Combines base rankers (KNN, Random Forest, LightGBM) using Choquet fuzzy integra
 - Captures interactions and synergies between rankers
 - Handles prediction disagreement through non-linear aggregation
 
-## Configuration
-
-Optimal hyperparameters (determined via grid search):
-
-| Parameter | MQ2007 | MQ2008 | WCL2R |
-|-----------|--------|--------|-------|
-| Graph pruning threshold (σ) | 0.12 | 0.12 | 0.12 |
-| # Clusters (spectral) | 4 | 3 | 4 |
-| Top features (%) | 30 | 30 | 30 |
-| Hidden layers | 3 | 3 | 4 |
-| Dropout rates | [0.5,0.4,0.3] | [0.5,0.4,0.3] | [0.5,0.4,0.3,0.2] |
-| Learning rate | 0.005 | 0.005 | 0.001 |
-| Batch size | 32 | 32 | 32 |
-
 ## Evaluation Metrics
 
 The framework evaluates using standard IR metrics:
@@ -173,48 +149,6 @@ Run evaluation:
 ```bash
 perl Eval-Score-4.0-WCL2R.pl judgements.txt predictions.txt output.txt 0
 ```
-
-## Results
-
-### LETOR4-MQ2007
-
-| Method | NDCG@1 | P@1 | MAP |
-|--------|--------|-----|-----|
-| HLambdaMART | 0.4685 | 0.5375 | 0.5026 |
-| **UGD-LTR** | **0.4715** | **0.5472** | 0.4944 |
-
-### LETOR4-MQ2008
-
-| Method | NDCG@1 | P@1 | MAP |
-|--------|--------|-----|-----|
-| RankSVM-Struct | 0.4156 | 0.4963 | 0.5279 |
-| **UGD-LTR** | **0.4402** | **0.5165** | 0.5160 |
-
-### WCL2R
-
-| Method | NDCG@1 | P@1 | MAP |
-|--------|--------|-----|-----|
-| SeaRank | 0.6548 | 0.5828 | 0.5922 |
-| **UGD-LTR** | **0.6915** | **0.6508** | **0.6088** |
-
-## Ablation Study
-
-| Configuration | WCL2R NDCG@1 | Improvement |
-|---------------|--------------|-------------|
-| Standard only | 0.6421 | Baseline |
-| Graph only | 0.6653 | +2.3% |
-| + Average fusion | 0.6801 | +3.8% |
-| **Full UGD-LTR** | **0.6915** | **+4.9%** |
-
-## Computational Requirements
-
-| Dataset | Training Time (GPU) | Inference Time (per query) |
-|---------|--------------------|----------------------------|
-| MQ2007 | ~28 min | ~3.4 ms |
-| MQ2008 | ~22 min | ~3.1 ms |
-| WCL2R | ~140 min | ~4.2 ms |
-
-**Note**: The 22 deep predictors are embarrassingly parallel and can be trained simultaneously on multi-core systems (17.9× speedup with 22 cores).
 
 ## Limitations
 
@@ -243,8 +177,3 @@ This research was supported by the ICT Research Institute, Tehran, Iran.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contact
-
-- Maryam Piroozmand: m.piroozmand@ut.ac.ir
-- Ali Moeini (Corresponding Author): moeini@ut.ac.ir
